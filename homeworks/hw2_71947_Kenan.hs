@@ -62,8 +62,12 @@ splitPoints (x,y) r ps =  (filter pIsInCircle ps, filter (not.pIsInCircle) ps)
     dBetweenPs (c,d) (m,n) = (sqrt ( ((c-m)**2) + ((d-n)**2) ))
 
 -- Zadacha 4
+type Account = (Int, Int, Double)
+type Person = (Int, String, String)
 
-      
+--getAverageBalance :: ([Account],[Person]) -> (Person -> Bool) -> Double
+
+
 main :: IO()
 main = do
      --Zadacha 1:
@@ -83,4 +87,11 @@ main = do
       
       --Zadacha 4
 
-      
+      --  ps :: [Person]
+      --  ps = [(1, "Ivan", "Sofia"), (2, "Georgi", "Burgas"), (3, "Petar", "Plovdiv"), (4, "Petya", "Burgas")]
+
+      --  as :: [Account]
+      --  as = [(1, 1, 12.5), (2, 1, 123.2), (3, 2, 13.0), (4, 2, 50.2), (5, 2, 17.2), (6, 3, 18.3), (7, 4, 19.4)]
+
+       --print (getAverageBalance (as,ps) (\ (_,_,city) -> city == "Burgas")) -- →24.95
+       --print (getAverageBalance (as,ps) (\ (_,(n:_),_) -> n == 'P')) -- → 18.85
